@@ -17,12 +17,11 @@ function App() {
   }
 
   function addFeedbackHandler(feedBackObj) {
-    console.log("I am here")
     const newFeedback = {
       ...feedBackObj,
       id: uuid()
     }
-    setFeedback(prev => [...prev, newFeedback])
+    setFeedback(prev => [newFeedback, ...prev])
   }
 
   return (

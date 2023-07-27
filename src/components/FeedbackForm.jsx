@@ -4,7 +4,6 @@ import Button from './Button'
 import RatingSelect from './RatingSelect'
 
 function FeedbackForm({ submitHandler }) {
-  console.log(submitHandler)
     const [text, setText] = useState("")
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [rating, setRating] = useState(10)
