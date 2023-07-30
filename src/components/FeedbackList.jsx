@@ -6,7 +6,7 @@ function FeedbackList({ feedback }) {
         return <h2>No Feedback Yet</h2>
     }
 
-    const displayedList = feedback.map(el => <FeedbackItem key={el.id} rating={el.rating} text={el.text}/>)
+    const displayedList = feedback.map(el => <FeedbackItem key={el.id} {...el} />)
   return (
     <div className='feedback-list'>
       {displayedList}

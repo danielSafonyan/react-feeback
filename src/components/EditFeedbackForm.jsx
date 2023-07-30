@@ -3,10 +3,10 @@ import Card from "./Card"
 import Button from './Button'
 import RatingSelect from './RatingSelect'
 
-function FeedbackForm({ submitHandler }) {
-    const [text, setText] = useState("")
-    const [btnDisabled, setBtnDisabled] = useState(true)
-    const [rating, setRating] = useState(10)
+function FeedbackForm({ submitHandler, task }) {
+    const [text, setText] = useState(task.text)
+    const [btnDisabled, setBtnDisabled] = useState(false)
+    const [rating, setRating] = useState(task.rating)
 
     function handleTextChange(e) {
         if (e.target.value.length > 10) { setBtnDisabled(false) }
@@ -16,9 +16,7 @@ function FeedbackForm({ submitHandler }) {
 
     function handleFormSubmit(e) {
       e.preventDefault()
-      setText('')
-      setRating(10)
-      submitHandler({text: text.trim(), rating})
+      submitHandler({text: text.trim(), rating, id: task.id})
     }
   return (
     <Card>
